@@ -13,10 +13,24 @@
     <body>
         <nav class="fixed-nav-bar">
             <a id="home-button" href="/"><img width="6%" hieght="6%" src="{{ url_for('static', filename='imgs/home-icon.png') }}"></a>
-            <a class="nav-bar-mid" id="{{ url_for('static', filename='templates/tictactoe.html') }}" href="/tictactoe.html"><img width="6%" hieght="6%" src="{{ url_for('static', filename='imgs/tactictoe.png') }}"></a>
+            <a class="nav-bar-mid" id="tictactoe-button" href="/tictactoe"><img width="6%" hieght="6%" src="{{ url_for('static', filename='imgs/tactictoe.png') }}"></a>
         </nav>
 
-        <div id="1" onclick="clicked(this)"><img src="{{ url_for('static', filename='/imgs/favicon.ico') }}"></div>
+        <div id="board">
+
+        <img id="1" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+        <img id="2" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+        <img id="3" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+        <br>
+        <img id="4" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+        <img id="5" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+        <img id="6" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+        <br>
+        <img id="7" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+        <img id="8" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+        <img id="9" onclick="clicked(this)" class="tic-button" src="{{ url_for('static', filename='/imgs/tictactoe/N.png') }}">
+
+        </div>
 
     </body>
 </html>
