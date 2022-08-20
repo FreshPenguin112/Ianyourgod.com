@@ -1,150 +1,27 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
-        <title>Ian Hawthorne's Art Website</title>
-        <link rel="shortcut icon" href="https://codehs.com/uploads/e0bb59cc1f3ac150ab9367ad719e174e">
-        <style>
-            .top {
-                position: fixed;
-                top: 0;
-                backGround-color: darkOrange;
-                color: black;
-                width:100%;
-                z-index:998;
-            }
-            #welc {
-                text-align:center;
-                font-family: 'Brush Script MT', cursive;
-            }
-            .pics {
-                text-align: center;
-                width:20%;
-                height:20%;
-
-            }
-            .wp {
-                text-align:center;
-            }
-        </style>
-        <style>
-            /* Popup container - can be anything you want */
-            .popuptet {
-                z-index:999;
-            }
-            .popup {
-              position: relative;
-              display: inline-block;
-              cursor: pointer;
-              -webkit-user-select: none;
-              -moz-user-select: none;
-              -ms-user-select: none;
-              user-select: none;
-              display: inline-block;
-            }
-
-            /* The actual popup */
-            .popup .popuptext {
-              visibility: hidden;
-              width: 160px;
-              background-color: #555;
-              color: #fff;
-              text-align: center;
-              border-radius: 6px;
-              padding: 8px 0;
-              position: absolute;
-              z-index: 1;
-              bottom: 125%;
-              left: 50%;
-              margin-left: -80px;
-            }
-
-            /* Popup arrow */
-            .popup .popuptext::after {
-              content: "";
-              position: absolute;
-              top: 100%;
-              left: 50%;
-              margin-left: -5px;
-              border-width: 5px;
-              border-style: solid;
-              border-color: #555 transparent transparent transparent;
-            }
-
-            /* Toggle this class - hide and show the popup */
-            .popup .show {
-              visibility: visible;
-              -webkit-animation: fadeIn 1s;
-              animation: fadeIn 1s;
-            }
-
-            /* Add animation (fade in the popup) */
-            @-webkit-keyframes fadeIn {
-              from {opacity: 0;}
-              to {opacity: 1;}
-            }
-
-            @keyframes fadeIn {
-              from {opacity: 0;}
-              to {opacity:1 ;}
-            }
-        </style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Website</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/imgs/favicon.ico') }}">
     </head>
     <body>
-        <table class="top">
-            <tr>
-                <th>
-                    <a href="/">
-                        <img src="https://codehs.com/uploads/19a855be39fe1264da08a6968b9b5f3c" width="100px" hieght="100px">
-                    </a>
-                </th>
-                <th>
-                    <a href="/drawings">
-                        <img src="https://codehs.com/uploads/7645c44b110a0dd638c44251fd2796ba" width="140px" hieght="140px">
-                    </a>
-                </th>
-                <th>
-                    <a href="/paintings">
-                        <img src="https://codehs.com/uploads/acbde21cf73a4aaa2c5da2f6c4cefd25" width="130px" hieght="200px">
-                    </a>
-                </th>
-                <th>
-                    <a href="/sculptures">
-                        <img src="https://codehs.com/uploads/0a6b51fcf680541154cc6044b8357e10" width="130px" hieght="130px">
-                    </a>
-                </th>
-            </tr>
-        </table>
-        <br><br><br><br><br><br><br>
-        <h1 id="welc">Welcome! <br>To Ian Hawthorne's Art Display</h1>
-        <br><br><br>
-        <h3 class="wp"><i>Why hello there!</i></h3>
-        <p class="wp">
-            I hope you've found this on a fine morning, noon, or evening, and I hope you'll enjoy this art!<br> First, I'll show you some of my favorites.
-        </p>
-        <br>
-        <center>
-            <script> //pop up is from w3schools
-                // When the user clicks on div, open the popup
-                function show(id) {
-                  var popup = document.getElementById(id);
-                  popup.classList.toggle("show");
-                }
-            </script>
-            <h2>My Favorites!</h2>
-            <div style="display: inline-block;" class="popup" onclick="show('pop1')"><img class="pics" src="https://virtual.dma.org/wp-content/gallery/dart-2021/23-Ashwin-Yogaratnam.jpg">
-                <span class="popuptext" id="pop1"><a href="https://virtual.dma.org/dart-student-art-contest-2021/">Made By: Ashwin Yogartatnam</a></span>
-            </div>
-            <br>A beautiful drawing of a subway!<br>
-            <div style="display: inline-block;" class="popup" onclick="show('pop2')"><img class="pics" src="https://codehs.com/uploads/f8d129dbf1b9e66ad019f785dfb30747">
-                <span class="popuptext" id="pop2">Made by Ian Hawthorne!</span>
-            </div>
-            <br>A beautiful painting of the feeling of placeholder image!<br>
-            <div style="display: inline-block;" class="popup" onclick="show('pop3')"><img class="pics" src="https://codehs.com/uploads/f8d129dbf1b9e66ad019f785dfb30747">
-                <span class="popuptext" id="pop3">Made by Ian Hawthorne!</span>
-            </div>
-            <br>A beautiful sculpture of placeholder images working together!<br>
-            <br>
-        </center>
+        <nav class="fixed-nav-bar">
+            <a id="home-button" href="/"><img width="6%" hieght="6%" src="{{ url_for('static', filename='imgs/home-icon.png') }}"></a>
+            <a class="nav-bar-mid" id="{{ url_for('static', filename='templates/tictactoe.html'" href="/tictactoe.html"><img width="6%" hieght="6%" src="{{ url_for('static', filename='imgs/tactictoe.png') }}"></a>
+        </nav>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
     </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Website</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/tictac.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/imgs/favicon.ico') }}">
+        <script src="{{ url_for('static', filename='/js/tictac.js') }}"></script>
+    </head>
+    <body>
+        <nav class="fixed-nav-bar">
+            <a id="home-button" href="/"><img width="6%" hieght="6%" src="{{ url_for('static', filename='imgs/home-icon.png') }}"></a>
+            <a class="nav-bar-mid" id="{{ url_for('static', filename='templates/tictactoe.html') }}" href="/tictactoe.html"><img width="6%" hieght="6%" src="{{ url_for('static', filename='imgs/tactictoe.png') }}"></a>
+        </nav>
+
+        <div id="1" onclick="clicked(this)"><img src="{{ url_for('static', filename='/imgs/favicon.ico') }}"></div>
+
+    </body>
+</html>
