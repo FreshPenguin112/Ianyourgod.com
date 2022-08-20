@@ -23,7 +23,8 @@ function clicked(obj) {
         }
         if (am == 3) {
             document.getElementById("win").innerHTML = "<h1>X Wins!</h1>";
-            break
+            win();
+            break;
         }
     }
     for (const i of wins) {
@@ -35,8 +36,25 @@ function clicked(obj) {
         }
         if (am == 3) {
             document.getElementById("win").innerHTML = "<h1>O Wins!</h1>";
-            break
+            win();
+            break;
         }
     }
+    for (let i = 1;i < 10;i++) {
+        if (board[i] == "n") {
+            return;
+        }
+    }
+    document.getElementById("win").innerHTML = "<h1>Tie!</h1>";
+    win();
 
+    
+
+}
+function win() {
+    for (var i = 1; i < 10; i++) {
+        console.log(i);
+        board[i] = "n"
+        document.getElementById(i.toString()).src = "static/imgs/tictactoe/N.png";
+    }
 }
