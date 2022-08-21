@@ -10,7 +10,7 @@ def home():
 def tictac():
     return render_template("tictactoe.html")
 
-@app.route("/canvas")
+@app.route("/draw")
 def canvas():
     return render_template("draw.html")
 

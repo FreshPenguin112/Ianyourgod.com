@@ -1,10 +1,66 @@
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.fillStyle = "red";
-ctx.fillRect(20, 20, 75, 50);
-//Turn transparency on
-ctx.globalAlpha = 0.2;
-ctx.fillStyle = "blue";
-ctx.fillRect(50, 50, 75, 50);
-ctx.fillStyle = "green";
-ctx.fillRect(80, 80, 75, 50);
+const canvas = document.getElementById('drawing-board');
+const toolbar = document.getElementById('toolbar');
+const ctx = canvas.getContext('2d');
+
+const canvasOffsetX = canvas.offsetLeft;
+const canvasOffsetY = canvas.offsetTop;
+
+canvas.width = window.innerWidth - canvasOffsetX;
+canvas.height = window.innerHeight - canvasOffsetY;
+
+let isPainting = false;
+let lineWidth = 5;
+let startX;
+let startY;
+let precolor = "#000000";
+
+toolbar.addEventListener('click', e => {
+    if (e.target.id === 'clear') {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    if (e.target.id === "erase") {
+        precolor = document.getElementById("stroke").value;
+        console.log(precolor);
+        ctx.strokeStyle = "#ffffff";
+    }
+    if (e.target.id === "pen") {
+        ctx.strokeStyle = precolor;
+    }
+});
+
+toolbar.addEventListener('change', e => {
+    if(e.target.id === 'stroke') {
+        ctx.strokeStyle = e.target.value;
+    }
+
+    if(e.target.id === 'lineWidth') {
+        lineWidth = e.target.value;
+    }
+    
+});
+
+const draw = (e) => {
+    if(!isPainting) {
+        return;
+    }
+
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = 'round';
+
+    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
+    ctx.stroke();
+}
+
+canvas.addEventListener('mousedown', (e) => {
+    isPainting = true;
+    startX = e.clientX;
+    startY = e.clientY;
+});
+
+canvas.addEventListener('mouseup', e => {
+    isPainting = false;
+    ctx.stroke();
+    ctx.beginPath();
+});
+
+canvas.addEventListener('mousemove', draw);

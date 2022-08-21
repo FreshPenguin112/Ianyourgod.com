@@ -16,15 +16,24 @@
         <nav class="fixed-nav-bar">
             <a id="home-button" href="/"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/home-icon.png') }}"></a>
             <a  id="tictactoe-button" href="/tictactoe"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/tactictoe.png') }}"></a>
+            <a  id="draw-button" href="/draw"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/mspaint.png') }}"></a>
         </nav>
 
-        <div id="canvas-div" >
-            <canvas id="myCanvas">
-                Your browser does not support the canvas tag.
-            </canvas>
-
-            
-        </div>
+        <section class="container">
+            <div id="toolbar">
+                <h1>Draw.</h1>
+                <label for="stroke">Stroke</label>
+                <input id="stroke" name='stroke' type="color">
+                <label for="lineWidth">Line Width</label>
+                <input id="lineWidth" name='lineWidth' type="number" value="5">
+                <button id="clear">Clear</button>
+                <button id="erase">Eraser</button>
+                <button id="pen">Pen</button>
+            </div>
+            <div class="drawing-board">
+                <canvas id="drawing-board"></canvas>
+            </div>
+        </section>
 
     </body>
 </html>
