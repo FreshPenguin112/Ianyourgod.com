@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/draw.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/imgs/favicon.ico') }}">
+        <script src="{{ url_for('static', filename='/js/draw.js') }}" async defer></script>
+    </head>
+    <body>
+
+        <nav class="fixed-nav-bar">
+            <a id="home-button" href="/"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/home-icon.png') }}"></a>
+            <a  id="tictactoe-button" href="/tictactoe"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/tactictoe.png') }}"></a>
+        </nav>
+
+        <div id="canvas-div" >
+            <canvas id="myCanvas">
+                Your browser does not support the canvas tag.
+            </canvas>
+
+            
+        </div>
+
+    </body>
+</html>

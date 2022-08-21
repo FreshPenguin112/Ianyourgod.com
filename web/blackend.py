@@ -10,5 +10,9 @@ def home():
 def tictac():
     return render_template("tictactoe.html")
 
+@app.route("/canvas")
+def canvas():
+    return render_template("draw.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
