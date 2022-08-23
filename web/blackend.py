@@ -14,5 +14,9 @@ def tictac():
 def canvas():
     return render_template("draw.html")
 
+@app.route("/clicker")
+def clicker():
+    return render_template("clicker.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

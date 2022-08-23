@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Website</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/clicker.css') }}">
+        <script src="{{ url_for('static', filename='js/clicker.js') }}"></script>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/imgs/favicon.ico') }}">
+    </head>
+    <body>
+        <nav class="fixed-nav-bar">
+            <a id="home-button" href="/"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/home-icon.png') }}"></a>
+            <a id="tictactoe-button" class="nav-bar-mid" href="/tictactoe"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/tactictoe.png') }}"></a>
+            <a  id="draw-button" href="/draw"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/mspaint.png') }}"></a>
+            <a  id="clicker-button" href="/clicker"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/greenbutton.png') }}"></a>
+        </nav>
+        <br><br><br><br><br><br><br><br>
+        
+        <img id="click-button" onmousedown="setimg(this,'static/imgs/greenbuttondown.png')" onmouseup="setimg(this,'static/imgs/greenbutton.png')" width="15%" hieght="15%" src="{{ url_for('static', filename='imgs/greenbutton.png') }}">
+
+    </body>
+</html>
