@@ -19,8 +19,26 @@
             <a  id="clicker-button" href="/clicker"><img width="5%" hieght="5%" src="{{ url_for('static', filename='imgs/greenbutton.png') }}"></a>
         </nav>
         <br><br><br><br><br><br><br><br>
+        <container class="button-container">
+            <button id="+1button" onclick="addClickam(this,1)">Per click +1 (cost 48)</button>
+            <button id="+2button" onclick="addClickam(this,2)">Per click +2 (cost 96)</button>
+            <button id="+5button" onclick="addClickam(this,5)">Per click +5 (cost )</button>
+            <button id="+10button" onclick="addClickam(this,10)">Per click +10 (cost )</button>
+            <button id="+50button" onclick="addClickam(this,50)">Per click +50 (cost )</button>
+            <button id="+100button" onclick="addClickam(this,100)">Per click +100 (cost )</button>
+        </container>
+        <br><br><br>
+        <container class="button-container">
+            <button id="1auto-button" onclick="buyPresser(this,1)">Add 1 auto presser!</button>
+            <button id="2auto-button" onclick="buyPresser(this,2)">Add 2 auto pressers!</button>
+            <button id="5auto-button" onclick="buyPresser(this,5)">Add 5 auto pressers!</button>
+            <button id="10auto-button" onclick="buyPresser(this,10)">Add 10 auto pressers!</button>
+            <button id="50auto-button" onclick="buyPresser(this,50)">Add 50 auto pressers!</button>
+            <button id="100auto-button" onclick="buyPresser(this,100)">Add 100 auto pressers!</button>
+        </container>
         
-        <img id="click-button" onmousedown="setimg(this,'static/imgs/greenbuttondown.png')" onmouseup="setimg(this,'static/imgs/greenbutton.png')" width="15%" hieght="15%" src="{{ url_for('static', filename='imgs/greenbutton.png') }}">
+        <p id="click-counter">0 Clicks!<br>1 click per cl</p>
+        <img id="click-button" onmousedown="setimg(this,'static/imgs/greenbuttondown.png');bclc();" onmouseup="setimg(this,'static/imgs/greenbutton.png')" width="15%" hieght="15%" src="{{ url_for('static', filename='imgs/greenbutton.png') }}">
 
     </body>
 </html>
