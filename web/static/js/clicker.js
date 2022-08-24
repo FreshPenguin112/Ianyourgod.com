@@ -36,14 +36,12 @@ function bclc() {
 }
 
 function hakr() {
-    clcprice = -100000
     clicks += 9999999999
     clickam += 9999999999
-    priceprice = -9999999
 }
 
 setInterval(function() {
-    clicks += 1 * pressers;
+    clicks += 2 * pressers;
 }, 1000)
 
 setInterval(function() {
