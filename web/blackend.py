@@ -18,9 +18,9 @@ def canvas():
 def clicker():
     return render_template("clicker.html")
 
-@app.route("/multiplayer")
+@app.route("/snake")
 def multi():
-    return render_template("multiplayer.html")
+    return render_template("snake.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
