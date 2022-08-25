@@ -33,4 +33,4 @@ setInterval(function() {
     } else if (dir === "down") {
         document.getElementById('head').style.marginTop  = (posTop+22)+"px";
     }
-}, 750)
+}, 300)
