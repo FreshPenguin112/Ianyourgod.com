@@ -1,28 +1,27 @@
 function runc(cid) {
     let txt = document.getElementById(cid).value;
     let output = "";
-    let i = 0;
-    let item = txt[0];
-    let line = "";
     let outputs;
-    while (i < txt.length) {
-        while (item != "\n" && i < txt.length) {
-            line += item
-            i += 1
-            item = txt[i]
+    const lines = [];
+    let line = "";
+    let end;
+    txt = txt.replace(/[\r\n]/gm, '');
+    for (const i of txt) {
+        if (i !== ";") {
+            line += i
+        } else {
+            lines.push(line)
+            line = ""
         }
-        if (i > txt.length || line === undefined) {
-            break
-        }
-        outputs = getInputs(line);
+    }
+    for (const i of lines) {
+        outputs = getInputs(i);
         if (outputs[0] === "print") {
-            output += outputs[1]; + "\n"
-        }
-        if (outputs[0] === "add") {
-            n1 = parseFloat(outputs[1])
-            n2 = parseFloat(outputs[2])
-            ret = n1 + n2
-            output += ret
+            end = "<br>"
+            if (outputs[2] !== undefined) {
+                end = outputs[2];
+            }
+            output += outputs[1] + end;
         }
     }
     document.getElementById("output").innerHTML = output;
@@ -39,12 +38,12 @@ function getInputs(txt) {
             break;
         }
         cmd += item;
-        i += 1;
+        i++
         item = txt[i];
     }
     outputs.push(cmd);
     let output = "";
-    i += 1
+    i++
     item = txt[i]
     while (i < txt.length) {
         while (item != ' ' || str) {
@@ -53,15 +52,14 @@ function getInputs(txt) {
             }
             if (item === '"' || item === "'") {
                 str = !str;
-                console.log("flip");
             }
             if (!(item === '"' || item === "'")) {
                 output += item;
             }
-            i += 1;
+            i++;
             item = txt[i];
         }
-        i += 1
+        i++
         item = txt[i]
         outputs.push(output);
         output = "";
