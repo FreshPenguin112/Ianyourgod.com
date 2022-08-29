@@ -52,8 +52,7 @@ function getInputs(txt) {
             }
             if (item === '"' || item === "'") {
                 str = !str;
-            }
-            if (!(item === '"' || item === "'")) {
+            } else {
                 output += item;
             }
             i++;

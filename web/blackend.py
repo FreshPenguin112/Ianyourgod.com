@@ -22,5 +22,9 @@ def clicker():
 def multi():
     return render_template("cod.html")
 
+@app.route("/cclicker")
+def cclicker():
+    return render_template("cookieclicker.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
